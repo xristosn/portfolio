@@ -88,7 +88,7 @@ export const Projects: React.FC = () => {
           .sort((a, b) => {
             const stampA = new Date(a.updated_at).getTime();
             const stampB = new Date(b.updated_at).getTime();
-            return stampA - stampB;
+            return stampB - stampA;
           })
           .map((r) => ({
             title: r.name
