@@ -19,6 +19,7 @@ interface GithubPartialProject {
   html_url: string;
   homepage: string;
   updated_at: string;
+  topics: string[];
 }
 
 const PRODUCTION_PROJECTS: Project[] = [
@@ -80,11 +81,13 @@ export const Projects: React.FC = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('https://api.github.com/users/xristosn/repos');
-      const result = (await response.json()) as GithubPartialProject[];
+      const response = await fetch(
+        'https://api.github.com/search/repositories?q=user:xristosn+topic:public'
+      );
+      const result = (await response.json()) as { items: GithubPartialProject[] };
 
       setPersonalProjects(
-        result
+        result.items
           .sort((a, b) => {
             const stampA = new Date(a.updated_at).getTime();
             const stampB = new Date(b.updated_at).getTime();
@@ -142,7 +145,7 @@ export const Projects: React.FC = () => {
         </Reveal>
       </DotNavSection>
 
-      <DotNavSection id="production" label='Production Work'>
+      <DotNavSection id='production' label='Production Work'>
         <Reveal>
           <div className='flex flex-col gap-8 reveal-soft-rise text-center'>
             <div className='flex flex-col gap-2'>
