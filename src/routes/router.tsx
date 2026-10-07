@@ -2,7 +2,6 @@ import { Layout } from '@/components/layout';
 import { createBrowserRouter } from 'react-router';
 import { ROUTES } from './routes';
 import { About } from './about';
-import { Projects } from './projects';
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +14,10 @@ export const router = createBrowserRouter([
       },
       {
         path: ROUTES.projects,
-        element: <Projects />,
+        lazy: async () => {
+          const { Projects } = await import('./projects');
+          return { Component: Projects };
+        },
       },
     ],
   },

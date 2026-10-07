@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -10,7 +11,7 @@
   --card-foreground: rgb(23, 25, 28);
   --popover: rgb(242, 242, 242);
   --popover-foreground: rgb(23, 25, 28);
-  --primary: rgb(48, 140, 232);
+  --primary: rgb(30, 94, 184);
   --primary-foreground: rgb(255, 255, 255);
   --secondary: rgb(227, 229, 232);
   --secondary-foreground: rgb(46, 49, 56);
@@ -22,22 +23,23 @@
   --destructive-foreground: rgb(255, 255, 255);
   --border: rgb(213, 215, 221);
   --input: rgb(227, 229, 232);
-  --ring: rgb(48, 140, 232);
-  --chart-1: rgb(48, 140, 232);
+  --ring: rgb(30, 94, 184);
+  --chart-1: rgb(30, 94, 184);
   --chart-2: rgb(34, 195, 115);
   --chart-3: rgb(245, 153, 61);
   --chart-4: rgb(153, 82, 224);
   --chart-5: rgb(230, 162, 25);
   --sidebar: rgb(250, 250, 250);
   --sidebar-foreground: rgb(34, 37, 42);
-  --sidebar-primary: rgb(48, 140, 232);
+  --sidebar-primary: rgb(30, 94, 184);
   --sidebar-primary-foreground: rgb(255, 255, 255);
   --sidebar-accent: rgb(227, 229, 232);
   --sidebar-accent-foreground: rgb(46, 49, 56);
   --sidebar-border: rgb(221, 223, 227);
-  --sidebar-ring: rgb(48, 140, 232);
-  --font-sans: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --sidebar-ring: rgb(30, 94, 184);
+  --font-sans:
+    'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --font-serif: 'Georgia', serif;
   --font-mono: 'SF Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   --radius: 0.75rem;
@@ -49,16 +51,16 @@
   --shadow-color: hsl(220, 10%, 15%);
   --shadow-2xs: 0rem 0.125rem 0.5rem 0rem hsl(220 10% 15% / 0.03);
   --shadow-xs: 0rem 0.125rem 0.5rem 0rem hsl(220 10% 15% / 0.03);
-  --shadow-sm: 0rem 0.125rem 0.5rem 0rem hsl(220 10% 15% / 0.05),
-    0rem 1px 2px -1px hsl(220 10% 15% / 0.05);
-  --shadow: 0rem 0.125rem 0.5rem 0rem hsl(220 10% 15% / 0.05),
-    0rem 1px 2px -1px hsl(220 10% 15% / 0.05);
-  --shadow-md: 0rem 0.125rem 0.5rem 0rem hsl(220 10% 15% / 0.05),
-    0rem 2px 4px -1px hsl(220 10% 15% / 0.05);
-  --shadow-lg: 0rem 0.125rem 0.5rem 0rem hsl(220 10% 15% / 0.05),
-    0rem 4px 6px -1px hsl(220 10% 15% / 0.05);
-  --shadow-xl: 0rem 0.125rem 0.5rem 0rem hsl(220 10% 15% / 0.05),
-    0rem 8px 10px -1px hsl(220 10% 15% / 0.05);
+  --shadow-sm:
+    0rem 0.125rem 0.5rem 0rem hsl(220 10% 15% / 0.05), 0rem 1px 2px -1px hsl(220 10% 15% / 0.05);
+  --shadow:
+    0rem 0.125rem 0.5rem 0rem hsl(220 10% 15% / 0.05), 0rem 1px 2px -1px hsl(220 10% 15% / 0.05);
+  --shadow-md:
+    0rem 0.125rem 0.5rem 0rem hsl(220 10% 15% / 0.05), 0rem 2px 4px -1px hsl(220 10% 15% / 0.05);
+  --shadow-lg:
+    0rem 0.125rem 0.5rem 0rem hsl(220 10% 15% / 0.05), 0rem 4px 6px -1px hsl(220 10% 15% / 0.05);
+  --shadow-xl:
+    0rem 0.125rem 0.5rem 0rem hsl(220 10% 15% / 0.05), 0rem 8px 10px -1px hsl(220 10% 15% / 0.05);
   --shadow-2xl: 0rem 0.125rem 0.5rem 0rem hsl(220 10% 15% / 0.13);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
@@ -69,9 +71,9 @@
   --foreground: rgb(227, 229, 232);
   --card: rgb(28, 30, 34);
   --card-foreground: rgb(227, 229, 232);
-  --popover: rgba(34, 37, 42, 0.7);
+  --popover: rgba(34, 37, 42);
   --popover-foreground: rgb(227, 229, 232);
-  --primary: rgb(48, 140, 232);
+  --primary: rgb(30, 94, 184);
   --primary-foreground: rgb(255, 255, 255);
   --secondary: rgb(46, 49, 56);
   --secondary-foreground: rgb(199, 202, 209);
@@ -83,22 +85,23 @@
   --destructive-foreground: rgb(255, 255, 255);
   --border: rgb(57, 62, 70);
   --input: rgb(46, 49, 56);
-  --ring: rgb(48, 140, 232);
-  --chart-1: rgb(48, 140, 232);
+  --ring: rgb(30, 94, 184);
+  --chart-1: rgb(30, 94, 184);
   --chart-2: rgb(34, 195, 115);
   --chart-3: rgb(245, 153, 61);
   --chart-4: rgb(153, 82, 224);
   --chart-5: rgb(230, 162, 25);
   --sidebar: rgb(28, 30, 34);
   --sidebar-foreground: rgb(213, 215, 221);
-  --sidebar-primary: rgb(48, 140, 232);
+  --sidebar-primary: rgb(30, 94, 184);
   --sidebar-primary-foreground: rgb(255, 255, 255);
   --sidebar-accent: rgb(46, 49, 56);
   --sidebar-accent-foreground: rgb(199, 202, 209);
   --sidebar-border: rgb(64, 69, 79);
-  --sidebar-ring: rgb(48, 140, 232);
-  --font-sans: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --sidebar-ring: rgb(30, 94, 184);
+  --font-sans:
+    'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --font-serif: 'Georgia', serif;
   --font-mono: 'SF Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   --radius: 0.75rem;
@@ -110,16 +113,16 @@
   --shadow-color: hsl(220, 10%, 5%);
   --shadow-2xs: 0rem 0.75rem 1.5rem -0.5rem hsl(220 10% 5% / 0.15);
   --shadow-xs: 0rem 0.75rem 1.5rem -0.5rem hsl(220 10% 5% / 0.15);
-  --shadow-sm: 0rem 0.75rem 1.5rem -0.5rem hsl(220 10% 5% / 0.3),
-    0rem 1px 2px -1.5px hsl(220 10% 5% / 0.3);
-  --shadow: 0rem 0.75rem 1.5rem -0.5rem hsl(220 10% 5% / 0.3),
-    0rem 1px 2px -1.5px hsl(220 10% 5% / 0.3);
-  --shadow-md: 0rem 0.75rem 1.5rem -0.5rem hsl(220 10% 5% / 0.3),
-    0rem 2px 4px -1.5px hsl(220 10% 5% / 0.3);
-  --shadow-lg: 0rem 0.75rem 1.5rem -0.5rem hsl(220 10% 5% / 0.3),
-    0rem 4px 6px -1.5px hsl(220 10% 5% / 0.3);
-  --shadow-xl: 0rem 0.75rem 1.5rem -0.5rem hsl(220 10% 5% / 0.3),
-    0rem 8px 10px -1.5px hsl(220 10% 5% / 0.3);
+  --shadow-sm:
+    0rem 0.75rem 1.5rem -0.5rem hsl(220 10% 5% / 0.3), 0rem 1px 2px -1.5px hsl(220 10% 5% / 0.3);
+  --shadow:
+    0rem 0.75rem 1.5rem -0.5rem hsl(220 10% 5% / 0.3), 0rem 1px 2px -1.5px hsl(220 10% 5% / 0.3);
+  --shadow-md:
+    0rem 0.75rem 1.5rem -0.5rem hsl(220 10% 5% / 0.3), 0rem 2px 4px -1.5px hsl(220 10% 5% / 0.3);
+  --shadow-lg:
+    0rem 0.75rem 1.5rem -0.5rem hsl(220 10% 5% / 0.3), 0rem 4px 6px -1.5px hsl(220 10% 5% / 0.3);
+  --shadow-xl:
+    0rem 0.75rem 1.5rem -0.5rem hsl(220 10% 5% / 0.3), 0rem 8px 10px -1.5px hsl(220 10% 5% / 0.3);
   --shadow-2xl: 0rem 0.75rem 1.5rem -0.5rem hsl(220 10% 5% / 0.75);
 }
 
@@ -156,37 +159,25 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --color-brand-gradient: linear-gradient(to right, var(--color-indigo-500), var(--color-blue-500));
+  --color-brand-gradient: linear-gradient(115deg, var(--primary) 0%, #58b0f0 100%);
   --reveal-delay: 250ms;
-
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
-  --font-serif: var(--font-serif);
-
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-
-  --shadow-2xs: var(--shadow-2xs);
-  --shadow-xs: var(--shadow-xs);
-  --shadow-sm: var(--shadow-sm);
-  --shadow: var(--shadow);
-  --shadow-md: var(--shadow-md);
-  --shadow-lg: var(--shadow-lg);
-  --shadow-xl: var(--shadow-xl);
-  --shadow-2xl: var(--shadow-2xl);
-
   --animate-load-sweep: load-sweep 1250ms ease-out forwards;
+
   @keyframes load-sweep {
     0% {
       max-width: 0;
       opacity: 0;
     }
+
     50% {
       max-width: 50%;
       opacity: 1;
     }
+
     100% {
       max-width: 100%;
       opacity: 1;
@@ -194,42 +185,16 @@
   }
 
   --animate-blur-in: blur-in 1s ease-out forwards;
+
   @keyframes blur-in {
     from {
       opacity: 0;
       filter: blur(10px);
     }
+
     to {
       opacity: 1;
       filter: blur(0);
-    }
-  }
-
-  --animate-wave: wave 2s ease-in-out;
-  @keyframes wave {
-    0% {
-      transform: rotate(0deg);
-    }
-    10% {
-      transform: rotate(14deg);
-    }
-    20% {
-      transform: rotate(-8deg);
-    }
-    30% {
-      transform: rotate(14deg);
-    }
-    40% {
-      transform: rotate(-4deg);
-    }
-    50% {
-      transform: rotate(10deg);
-    }
-    60% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(0deg);
     }
   }
 }
@@ -238,50 +203,34 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 @utility glass {
   @apply backdrop-blur-lg shadow-lg border transition-all duration-300;
   @apply bg-gray-100/10 border-white/20 shadow-black/5;
-  @apply dark:bg-white/5 dark:border-white/5 dark:shadow-black/40;
+  @apply dark:bg-gray-500/5 dark:border-white/5 dark:shadow-black/40;
 
   &:hover {
-    @apply bg-gray-100/20 dark:bg-white/10 border-white/30 dark:border-white/10;
-  }
-}
-
-@utility animate-sweep {
-  overflow: hidden;
-  white-space: nowrap;
-  animation: var(--animate-load-sweep);
-}
-
-@utility wave-hand {
-  transform-origin: 70% 70%;
-  display: inline-block;
-  animation: none;
-
-  &[data-reveal='true'],
-  .group[data-reveal='true'] & {
-    animation: var(--animate-wave);
-    animation-delay: var(--reveal-delay, 0s);
-    animation-fill-mode: backwards;
-  }
-}
-
-@utility reveal-bounce {
-  scale: 0;
-  opacity: 0;
-  transform-origin: center;
-  transition: all 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
-  transition-delay: var(--reveal-delay, 0ms);
-
-  &[data-reveal='true'] {
-    scale: 1;
-    opacity: 1;
+    @apply bg-gray-100/20 dark:bg-gray-400/10 border-white/30 dark:border-white/10;
   }
 }
 
@@ -295,21 +244,203 @@
 
   &[data-reveal='true'] {
     opacity: 1;
+
     transform: translateY(0) scale(1);
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal-soft-rise {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    transition-delay: 0ms;
+  }
+}
+
 @utility btn-gradient {
-  @apply bg-(image:--color-brand-gradient) text-white font-medium rounded-lg 
-         hover:brightness-110 transition-all active:scale-95;
+  @apply bg-(image:--color-brand-gradient) text-white font-medium;
+  transition:
+    filter 180ms ease,
+    box-shadow 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  &:hover:not(:disabled):not([aria-disabled='true']) {
+    filter: brightness(1.06);
+    box-shadow: 0 12px 44px color-mix(in oklab, var(--primary) 45%, transparent);
+  }
+
+  &:active:not(:disabled):not([aria-disabled='true']) {
+    filter: brightness(0.96);
+  }
+
+  &:focus-visible {
+    outline: 2px solid color-mix(in oklab, var(--primary) 70%, white);
+    outline-offset: -3px;
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 }
 
 @utility text-gradient {
-  @apply bg-linear-to-r from-indigo-500 to-blue-500 
-         bg-clip-text text-transparent;
+  @apply bg-(image:--color-brand-gradient) bg-clip-text text-transparent;
 }
 
-button:not([disabled]),
-[data-slot='button']:not([disabled]) {
-  cursor: pointer;
+.animated-background {
+  --background-color: #07080d;
+  --veil-accent: 138, 180, 255;
+
+  --veil-x: 50%;
+  --veil-y: 30%;
+
+  position: relative;
+  min-height: 100vh;
+  background: var(--background-color);
+}
+
+.animated-background__canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.6s;
+}
+
+.animated-background--dimmed .animated-background__canvas {
+  opacity: 0.4;
+}
+
+.animated-background__veil {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      500px circle at var(--veil-x) var(--veil-y),
+      rgba(var(--veil-accent), 0.07),
+      transparent 70%
+    ),
+    radial-gradient(130% 100% at 30% 30%, transparent 35%, var(--background-color) 100%);
+}
+
+.animated-background__content {
+  position: relative;
+  z-index: 2;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  animation: background-reveal 0.8s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+@keyframes background-reveal {
+  from {
+    clip-path: circle(0 at var(--transition-x, 50%) var(--transition-y, 90%));
+  }
+
+  to {
+    clip-path: circle(150% at var(--transition-x, 50%) var(--transition-y, 90%));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-background__canvas {
+    transition: none;
+  }
+
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+.hero-hand {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: hero-wave 2.4s 1s infinite;
+}
+
+@keyframes hero-wave {
+  0%,
+  50%,
+  100% {
+    transform: none;
+  }
+
+  10%,
+  30% {
+    transform: rotate(18deg);
+  }
+
+  20%,
+  40% {
+    transform: rotate(-10deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-hand {
+    animation: none;
+  }
+}
+
+.role-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1em;
+  margin-left: 4px;
+  vertical-align: -3px;
+  background: var(--primary);
+  animation: hero-blink 1s steps(2) infinite;
+}
+
+@keyframes hero-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .role-cursor {
+    animation: none;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility text-fluid-* {
+  --fluid-size: --value(number, [number]);
+
+  font-size: clamp(
+    calc(var(--fluid-size) * 0.4rem),
+    calc(var(--fluid-size) * 1.2vw),
+    calc(var(--fluid-size) * 1rem)
+  );
+}
+
+@custom-variant fine {
+  @media (hover: hover) and (pointer: fine) and (min-width: 700px) {
+    @slot;
+  }
+}
+
+@custom-variant non-desktop {
+  @media not all and (hover: hover) and (pointer: fine) and (min-width: 700px) {
+    @slot;
+  }
 }

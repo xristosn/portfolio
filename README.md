@@ -6,17 +6,15 @@ This is my personal portfolio website. I built it to display my projects and hav
 
 - **Framework:** React 19 & TypeScript
 - **Bundler:** Vite
-- **Routing:** React Router 7
+- **Routing:** React Router 8
 - **Styling:** Tailwind CSS 4
 - **UI Components:** ShadCN
 
 ## About the Background
 
-If you are interested in the background, it is made entirely with the **Canvas API** (no external animation libraries).
+The animated background is drawn with the **Canvas API**, without an external animation library. It lays out a responsive grid of points and uses sine waves to make the grid ripple and warp. The rendering blends connecting lines with dots, shifting between the two as the animation runs.
 
-I used a grid system that updates using `requestAnimationFrame`. The "warping" effect is created by calculating the distance of each grid point from the center of the screen and applying a sine wave displacement.
-
-The animation is programmed to cycle between a solid grid and a dot pattern.
+Pointer movement pushes nearby points away from the cursor, and pointer presses send out expanding ripples. The grid also shifts slightly with page scrolling. The animation uses `requestAnimationFrame` and respects the `prefers-reduced-motion` setting.
 
 ## 📄 License
 

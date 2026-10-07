@@ -7,21 +7,20 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { Button } from './ui/button';
-import { IoLogoLinkedin, IoMdContact } from 'react-icons/io';
-import { useIsMobile } from '@/hooks/use-is-mobile';
+import { IoLogoLinkedin } from 'react-icons/io';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
-export interface ContactDialogProps {
+export type ContactDialogProps = {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
+  trigger?: React.ReactElement;
+};
 
-export const ContactDialog: React.FC<ContactDialogProps> = ({ open, setOpen }) => {
+export const ContactDialog: React.FC<ContactDialogProps> = ({ open, setOpen, trigger }) => {
   const formRef = useRef<HTMLFormElement>(null);
-  const isMobile = useIsMobile();
   const [submitted, setSubmitted] = useState(false);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -33,7 +32,7 @@ export const ContactDialog: React.FC<ContactDialogProps> = ({ open, setOpen }) =
 
     const formData = new FormData(formRef.current);
     const params = new URLSearchParams(
-      Object.fromEntries(formData) as Record<string, string>
+      Object.fromEntries(formData) as Record<string, string>,
     ).toString();
 
     try {
@@ -53,22 +52,14 @@ export const ContactDialog: React.FC<ContactDialogProps> = ({ open, setOpen }) =
     }
   };
 
-  useEffect(() => {
-    if (!open && submitted) setSubmitted(false);
-  }, [open, submitted]);
+  const handleOpenChange = (nextOpen: boolean) => {
+    if (!nextOpen) setSubmitted(false);
+    setOpen(nextOpen);
+  };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button
-          size={isMobile ? 'icon-lg' : 'lg'}
-          variant='outline'
-          className='glass fixed bottom-4 right-4 items-center z-10 animate-sweep'
-        >
-          <IoMdContact />
-          {!isMobile && 'Contact'}
-        </Button>
-      </DialogTrigger>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
+      {trigger && <DialogTrigger render={trigger}></DialogTrigger>}
 
       <DialogContent>
         <DialogHeader>
@@ -83,7 +74,6 @@ export const ContactDialog: React.FC<ContactDialogProps> = ({ open, setOpen }) =
           ref={formRef}
           className='flex flex-col gap-6 pt-4'
           onSubmit={onSubmit}
-          aria-disabled={submitted}
         >
           <input type='hidden' name='form-name' value='contact' disabled={submitted} />
 
@@ -125,17 +115,28 @@ export const ContactDialog: React.FC<ContactDialogProps> = ({ open, setOpen }) =
           </div>
 
           {submitted ? (
-            <p>
+            <p role='status' aria-live='polite'>
               Thanks for reaching out. I’ve received your inquiry and will get back to you within 24
               hours. Have a great day!
             </p>
           ) : (
             <div className='flex gap-4 justify-between sm:justify-between'>
-              <Button asChild variant='secondary' size='icon-lg'>
-                <a href='https://www.linkedin.com/in/xristos-niaskos' target='_blank'>
-                  <IoLogoLinkedin />
-                </a>
-              </Button>
+              <Button
+                nativeButton={false}
+                role='link'
+                render={
+                  <a
+                    href='https://www.linkedin.com/in/xristos-niaskos'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    aria-label='LinkedIn profile'
+                  >
+                    <IoLogoLinkedin aria-hidden='true' />
+                  </a>
+                }
+                variant='secondary'
+                size='icon-lg'
+              />
 
               <Button type='submit' variant='secondary' size='lg'>
                 Send

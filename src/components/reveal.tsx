@@ -1,21 +1,35 @@
-import { useIsMobile } from '@/hooks/use-is-mobile';
-import { Children, cloneElement } from 'react';
+import { cn } from '@/lib/utils';
 import { useInView } from 'react-intersection-observer';
 
-export const Reveal: React.FC<{
-  children: React.ReactElement<React.HTMLAttributes<HTMLElement>>;
-}> = ({ children }) => {
-  const isMobile = useIsMobile();
+type RevealProps = React.ComponentPropsWithoutRef<'div'> & {
+  variant: 'soft-rise';
+};
+
+const REVEAL_VARIANTS = {
+  'soft-rise': 'reveal-soft-rise',
+} as const;
+
+export const Reveal: React.FC<RevealProps> = ({
+  variant,
+  className,
+  children,
+  ...props
+}) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: isMobile ? 0 : 0.09,
-    rootMargin: '24px 0px 0px 0px'
+    threshold: 0.09,
+    rootMargin: '24px 0px 0px 0px',
+    fallbackInView: true,
   });
 
-  const child = Children.only(children);
-
-  return cloneElement(child, {
-    ref,
-    'data-reveal': inView ? 'true' : 'false',
-  } as React.HTMLAttributes<HTMLElement>);
+  return (
+    <div
+      {...props}
+      ref={ref}
+      className={cn(REVEAL_VARIANTS[variant], className)}
+      data-reveal={inView ? 'true' : 'false'}
+    >
+      {children}
+    </div>
+  );
 };
